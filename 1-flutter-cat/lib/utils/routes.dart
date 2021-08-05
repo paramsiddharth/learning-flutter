@@ -1,0 +1,4 @@
+class MyRoutes {
+  static const String login = '/login',
+                      home = '/home';
+}
