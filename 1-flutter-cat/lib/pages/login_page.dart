@@ -7,7 +7,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  final ANIMATION_DURATION = 0.3;
+  static const ANIMATION_DURATION = 0.3;
   String name = '', password = '';
   bool changeButton = false;
   final _formKey = GlobalKey<FormState>();
