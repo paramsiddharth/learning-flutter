@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'utils/routes.dart';
-import 'pages/login_page.dart';
-import 'pages/home_page.dart';
+import 'package:flutter_cat/utils/routes.dart';
+import 'package:flutter_cat/pages/login_page.dart';
+import 'package:flutter_cat/pages/home_page.dart';
 
 void main() {
   runApp(MyApp());
