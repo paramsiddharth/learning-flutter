@@ -1,12 +1,33 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'dart:convert';
 
 import 'package:flutter_cat/models/catalogue.dart';
 import 'package:flutter_cat/widgets/drawer.dart';
 import 'package:flutter_cat/widgets/item.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   final num day = 3;
   final String name = 'Param';
+
+  @override
+  void initState() {
+    super.initState();
+    loadData();
+  }
+
+  loadData() async {
+    final String catJSON = await rootBundle.loadString('assets/files/catalogue.json');
+    final data = jsonDecode(catJSON);
+    final products = data['products'];
+    // print(catJSON);
+    print(products);
+  }
 
   @override
   Widget build(BuildContext context) {
