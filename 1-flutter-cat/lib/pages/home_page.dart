@@ -44,9 +44,46 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(16),
-        child: (Catalogue.items != null && Catalogue.items!.isNotEmpty) ? ListView.builder(
-          itemCount: Catalogue.items?.length ?? 0,
-          itemBuilder: (context, index) => ItemWidget(item: Catalogue.items![index],),
+        child: (Catalogue.items != null && Catalogue.items!.isNotEmpty) ? GridView.builder(
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            mainAxisSpacing: 16,
+            crossAxisSpacing: 16
+          ),
+          itemBuilder: (ctx, i) {
+            final item = Catalogue.items?[i];
+            return Card(
+              clipBehavior: Clip.antiAlias,
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+              child: GridTile(
+                header: Container(
+                  child: Text(
+                    item!.name,
+                    style: TextStyle(color: Colors.white)
+                  ),
+                  padding: const EdgeInsets.all(4),
+                  decoration: BoxDecoration(
+                    color: Colors.deepPurple
+                  ),
+                ),
+                child: Image.network(
+                  item.img,
+                  fit: BoxFit.fill,
+                ),
+                footer: Container(
+                  child: Text(
+                    item.price.toString(),
+                    style: TextStyle(color: Colors.white)
+                  ),
+                  padding: const EdgeInsets.all(4),
+                  decoration: BoxDecoration(
+                    color: Colors.black
+                  ),
+                ),
+              )
+            );
+          },
+          itemCount: Catalogue.items?.length,
         ) : Center(
           child: CircularProgressIndicator(),
         ),
