@@ -1,5 +1,6 @@
 class MyRoutes {
   static const String login   = '/login',
                       home    = '/home',
-                      details = '/details';
+                      details = '/details',
+                      cart    = '/cart';
 }

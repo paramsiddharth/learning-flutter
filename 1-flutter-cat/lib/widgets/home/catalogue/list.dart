@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_cat/pages/detail_page.dart';
+import 'package:flutter_cat/pages/detail.dart';
 
 import 'package:flutter_cat/widgets/home/catalogue/item.dart';
 import 'package:flutter_cat/models/catalogue.dart';

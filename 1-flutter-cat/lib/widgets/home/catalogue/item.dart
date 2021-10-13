@@ -37,7 +37,7 @@ class CatalogueItemView extends StatelessWidget {
                     '₹${item.price * 70}'.text.bold.xl.make(),
                     ElevatedButton(
                       onPressed: () {},
-                      child: 'Buy'.text.make(),
+                      child: 'Add'.text.make(),
                       style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all(MyTheme.darkBluishColour),
                         shape: MaterialStateProperty.all(StadiumBorder())

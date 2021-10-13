@@ -21,7 +21,7 @@ class DetailPage extends StatelessWidget {
             '₹${item.price * 70}'.text.bold.xl4.red800.make(),
             ElevatedButton(
               onPressed: () {},
-              child: 'Buy'.text.make(),
+              child: 'Add'.text.make(),
               style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all(MyTheme.darkBluishColour),
                 shape: MaterialStateProperty.all(StadiumBorder())
@@ -30,7 +30,9 @@ class DetailPage extends StatelessWidget {
           ],
         ).p32(),
       ),
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+      ),
       backgroundColor: MyTheme.creamColour,
       body: SafeArea(
         bottom: false,
@@ -51,6 +53,9 @@ class DetailPage extends StatelessWidget {
                   children: [
                     item.name.text.xl4.color(MyTheme.darkBluishColour).bold.make(),
                     item.desc.text.xl.textStyle(context.captionStyle!).make(),
+                    10.heightBox,
+                    'Nostrud dolor anim deserunt eiusmod laborum ea. Esse esse deserunt deserunt Lorem minim enim ea veniam cillum. Proident mollit magna elit minim ex nisi culpa deserunt quis pariatur cillum.'
+                    .text.textStyle(context.captionStyle!).make().px24()
                   ],
                 ).py64(),
               ),
